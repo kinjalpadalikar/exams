@@ -83,13 +83,14 @@ int main()
     insertFront(myList, 1);
 
     printList(myList); // [1 4 15 16 81 51 61 331 671 21]
-/*
+
     removeFront(myList);
     removeFront(myList);
     removeFront(myList);
 
     printList(myList); // [16 81 51 61 331 671 21]
 
+/*
     eraseBack(myList);
 
     printList(myList); // [16 81 51 61 331 671]
