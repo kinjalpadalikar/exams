@@ -65,6 +65,23 @@ void insertFront(List* myList, int newNumber)
     myList->next = node;
 }
 
+void removeFront(List* myList)
+{
+    Node* currentNode = myList->next;
+    
+    Node* previousNode = currentNode;
+
+    currentNode = currentNode->next;
+
+    free(previousNode);
+
+    myList->next = currentNode;
+ 
+   
+}
+
+// DON'T MODIFY ANYTHING IN MAIN
+
 int main()
 {
     List* myList = mallocList();
@@ -85,10 +102,8 @@ int main()
     printList(myList); // [1 4 15 16 81 51 61 331 671 21]
 
     removeFront(myList);
-    removeFront(myList);
-    removeFront(myList);
 
-    printList(myList); // [16 81 51 61 331 671 21]
+    printList(myList); // [ 4 15 16 81 51 61 331 671 21]
 
 /*
     eraseBack(myList);
