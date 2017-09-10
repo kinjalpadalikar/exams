@@ -80,6 +80,28 @@ void removeFront(List* myList)
    
 }
 
+
+
+
+void removeBack(List* myList)
+{
+    Node* currentNode = myList->next;
+    
+    Node* previousNode = currentNode;
+    
+    currentNode = currentNode->next;
+
+    //for ( ; currentNode != NULL; )
+    while(currentNode != NULL)
+    {
+        previousNode = currentNode;
+        currentNode = currentNode->next;
+    }
+
+    free(previousNode);
+}
+
+
 // DON'T MODIFY ANYTHING IN MAIN
 
 int main()
@@ -105,11 +127,11 @@ int main()
 
     printList(myList); // [ 4 15 16 81 51 61 331 671 21]
 
-/*
     eraseBack(myList);
 
     printList(myList); // [16 81 51 61 331 671]
 
+/*
     Node* node = findList(myList, 81);
 
     printf("Found node with number %d\n", node->next->number);
